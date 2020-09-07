@@ -4,8 +4,8 @@ const StudentList = (props) => (
   <main>
     <h1>学生列表</h1>
     <ul>
-      {props.studentData.map((student) => (
-        <li>
+      {props.studentData.map((student, index) => (
+        <li key={index}>
           {student.sid}. {student.name}
         </li>
       ))}

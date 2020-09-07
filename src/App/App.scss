@@ -4,6 +4,25 @@
 .App {
   background-color: $bg-gray;
 
+  header {
+    display: flex;
+    justify-items: baseline;
+    align-items: center;
+  }
+
+  header h1 {
+    width: 85%;
+    height: 40px;
+  }
+
+  button {
+    width: 9%;
+    height: 40px;
+    border: none;
+    background-color: $primary-color;
+    color: white;
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;

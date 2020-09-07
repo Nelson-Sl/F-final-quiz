@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import './App.scss';
 import StudentList from './components/StudentList';
+import TeamList from './components/TeamList';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       studentData: [],
+      teamData: [],
     };
   }
 
   componentDidMount() {
-    const url = 'http://localhost:8080/students';
-    this.fetchData(url)
+    const studentUrl = 'http://localhost:8080/students';
+    this.fetchData(studentUrl)
       .then((result) => {
         console.log(result);
         this.setState({
@@ -46,9 +48,14 @@ class App extends Component {
 
   render() {
     return (
-      <div data-testid="app" className="App">
-        <StudentList studentData={this.state.studentData} />
-      </div>
+      <main data-testid="app" className="App">
+        <section>
+          <TeamList teamData={this.state.teamData} />
+        </section>
+        <section>
+          <StudentList studentData={this.state.studentData} />
+        </section>
+      </main>
     );
   }
 }
