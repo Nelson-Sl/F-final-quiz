@@ -9,14 +9,15 @@ class App extends Component {
     this.state = {
       studentData: [],
       teamData: [],
+      studentUrl: 'http://localhost:8080/students',
+      teamUrl: 'http://localhost:8080/randomTeams',
     };
   }
 
   componentDidMount() {
-    const studentUrl = 'http://localhost:8080/students';
+    const { studentUrl } = this.state;
     this.fetchData(studentUrl)
       .then((result) => {
-        console.log(result);
         this.setState({
           studentData: JSON.parse(result),
         });
@@ -46,11 +47,22 @@ class App extends Component {
     });
   };
 
+  fetchTeamData = () => {
+    const { teamUrl } = this.state;
+    this.fetchData(teamUrl)
+      .then((result) => {
+        this.setState({
+          teamData: JSON.parse(result),
+        });
+      })
+      .catch((error) => console.error(error));
+  };
+
   render() {
     return (
       <main data-testid="app" className="App">
         <section>
-          <TeamList teamData={this.state.teamData} />
+          <TeamList teamData={this.state.teamData} fetchTeamData={this.fetchTeamData} />
         </section>
         <section>
           <StudentList studentData={this.state.studentData} />
