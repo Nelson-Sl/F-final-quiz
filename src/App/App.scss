@@ -36,4 +36,25 @@
     width: 9%;
     margin: 0 0 20px 20px;
   }
+
+  .team-info {
+    border: 1px solid black;
+    width: 100%;
+    margin-bottom: 20px;
+    .team-title {
+      width: 100%;
+      background-color: $gray;
+      color: white;
+      text-align: center;
+      height: 40px;
+      span {
+        position: relative;
+        top: 8px;
+        vertical-align: middle;
+      }
+    }
+    li {
+      margin-bottom: 0;
+    }
+  }
 }

@@ -15,7 +15,9 @@ class TeamList extends Component {
         <main>
           {teamData.map((team, index) => (
             <div key={index} className="team-info">
-              <div className="team-title">{team.teamName}</div>
+              <div className="team-title">
+                <span>{team.teamName}</span>
+              </div>
               <div className="team-members">
                 <TeamMemberList teamMembers={team.teamMembers} />
               </div>

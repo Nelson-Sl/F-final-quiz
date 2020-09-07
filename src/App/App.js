@@ -15,14 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const { studentUrl } = this.state;
-    this.fetchData(studentUrl)
-      .then((result) => {
-        this.setState({
-          studentData: JSON.parse(result),
-        });
-      })
-      .catch((error) => console.error(error));
+    this.fetchStudentData();
   }
 
   fetchData = (url) => {
@@ -45,6 +38,17 @@ class App extends Component {
       // 发送异步请求
       xhr.send();
     });
+  };
+
+  fetchStudentData = () => {
+    const { studentUrl } = this.state;
+    this.fetchData(studentUrl)
+      .then((result) => {
+        this.setState({
+          studentData: JSON.parse(result),
+        });
+      })
+      .catch((error) => console.error(error));
   };
 
   fetchTeamData = () => {
