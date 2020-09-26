@@ -8,10 +8,13 @@ class TeamList extends Component {
       <section>
         <header>
           <h1>分组列表</h1>
+          {/* TODO feedback：可以直接用onClick = {fetchTeamData} */}
           <button type="button" className="get-team" onClick={() => fetchTeamData()}>
             分组学员
           </button>
         </header>
+
+        {/* TODO feedback：main标签使用不当 */}
         <main>
           {teamData.map((team, index) => (
             <div key={index} className="team-info">

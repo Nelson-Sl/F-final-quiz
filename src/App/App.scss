@@ -4,6 +4,7 @@
 .App {
   background-color: $bg-gray;
 
+  // TODO feedback：推荐使用类选择器
   header {
     display: flex;
     justify-items: baseline;
@@ -15,6 +16,7 @@
     height: 40px;
   }
 
+  // TODO feedback：可以把button样式提取成mixin
   button {
     width: 9%;
     height: 40px;
@@ -23,6 +25,7 @@
     color: white;
   }
 
+  // TODO feedback：推荐使用类选择器
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -47,6 +50,8 @@
       color: white;
       text-align: center;
       height: 40px;
+
+      // TODO feedback：嵌套层次过多
       span {
         position: relative;
         top: 8px;

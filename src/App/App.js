@@ -18,7 +18,9 @@ class App extends Component {
     this.fetchStudentData();
   }
 
+  // TODO feedback：建议把数据请求提取到单独的service
   fetchData = (url) => {
+    // TODO feedback: 可以使用fetch api
     return new Promise((resolve, reject) => {
       // 创建异步请求
       const xhr = new XMLHttpRequest();
